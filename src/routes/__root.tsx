@@ -77,24 +77,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Verdant — ESG & Carbon Footprint Monitoring" },
+      { title: "Dashboard · Verdant ESG Monitor" },
       {
         name: "description",
         content:
-          "AI-powered ESG and carbon footprint dashboard for banks. Track emissions, energy, paper, and green-room metrics across every branch.",
+          "Bank-wide overview of emissions, energy, paper usage and ESG score.",
       },
-      { property: "og:title", content: "Verdant — ESG & Carbon Footprint Monitoring" },
+      { property: "og:title", content: "Dashboard · Verdant ESG Monitor" },
       {
         property: "og:description",
         content:
-          "Bank-grade ESG and carbon monitoring across every branch — emissions, energy, paper, alerts and reports.",
+          "Bank-wide overview of emissions, energy, paper usage and ESG score.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Dashboard · Verdant ESG Monitor" },
+      { name: "twitter:description", content: "Bank-wide overview of emissions, energy, paper usage and ESG score." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/fV6lO7JMWddOaPNG3TFPLjzelhi1/social-images/social-1783878646285-Screenshot_From_2026-07-12_23-20-30.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/fV6lO7JMWddOaPNG3TFPLjzelhi1/social-images/social-1783878646285-Screenshot_From_2026-07-12_23-20-30.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

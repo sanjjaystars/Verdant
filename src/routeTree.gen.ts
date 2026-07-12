@@ -9,8 +9,56 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as PaperRouteImport } from './routes/paper'
+import { Route as GreenRoomsRouteImport } from './routes/green-rooms'
+import { Route as EnergyRouteImport } from './routes/energy'
+import { Route as EmissionsRouteImport } from './routes/emissions'
+import { Route as BranchesRouteImport } from './routes/branches'
+import { Route as AlertsRouteImport } from './routes/alerts'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaperRoute = PaperRouteImport.update({
+  id: '/paper',
+  path: '/paper',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GreenRoomsRoute = GreenRoomsRouteImport.update({
+  id: '/green-rooms',
+  path: '/green-rooms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnergyRoute = EnergyRouteImport.update({
+  id: '/energy',
+  path: '/energy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmissionsRoute = EmissionsRouteImport.update({
+  id: '/emissions',
+  path: '/emissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BranchesRoute = BranchesRouteImport.update({
+  id: '/branches',
+  path: '/branches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlertsRoute = AlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +67,144 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/alerts': typeof AlertsRoute
+  '/branches': typeof BranchesRoute
+  '/emissions': typeof EmissionsRoute
+  '/energy': typeof EnergyRoute
+  '/green-rooms': typeof GreenRoomsRoute
+  '/paper': typeof PaperRoute
+  '/reports': typeof ReportsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/alerts': typeof AlertsRoute
+  '/branches': typeof BranchesRoute
+  '/emissions': typeof EmissionsRoute
+  '/energy': typeof EnergyRoute
+  '/green-rooms': typeof GreenRoomsRoute
+  '/paper': typeof PaperRoute
+  '/reports': typeof ReportsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/alerts': typeof AlertsRoute
+  '/branches': typeof BranchesRoute
+  '/emissions': typeof EmissionsRoute
+  '/energy': typeof EnergyRoute
+  '/green-rooms': typeof GreenRoomsRoute
+  '/paper': typeof PaperRoute
+  '/reports': typeof ReportsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/alerts'
+    | '/branches'
+    | '/emissions'
+    | '/energy'
+    | '/green-rooms'
+    | '/paper'
+    | '/reports'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/alerts'
+    | '/branches'
+    | '/emissions'
+    | '/energy'
+    | '/green-rooms'
+    | '/paper'
+    | '/reports'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/alerts'
+    | '/branches'
+    | '/emissions'
+    | '/energy'
+    | '/green-rooms'
+    | '/paper'
+    | '/reports'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  AlertsRoute: typeof AlertsRoute
+  BranchesRoute: typeof BranchesRoute
+  EmissionsRoute: typeof EmissionsRoute
+  EnergyRoute: typeof EnergyRoute
+  GreenRoomsRoute: typeof GreenRoomsRoute
+  PaperRoute: typeof PaperRoute
+  ReportsRoute: typeof ReportsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paper': {
+      id: '/paper'
+      path: '/paper'
+      fullPath: '/paper'
+      preLoaderRoute: typeof PaperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/green-rooms': {
+      id: '/green-rooms'
+      path: '/green-rooms'
+      fullPath: '/green-rooms'
+      preLoaderRoute: typeof GreenRoomsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/energy': {
+      id: '/energy'
+      path: '/energy'
+      fullPath: '/energy'
+      preLoaderRoute: typeof EnergyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/emissions': {
+      id: '/emissions'
+      path: '/emissions'
+      fullPath: '/emissions'
+      preLoaderRoute: typeof EmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branches': {
+      id: '/branches'
+      path: '/branches'
+      fullPath: '/branches'
+      preLoaderRoute: typeof BranchesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alerts': {
+      id: '/alerts'
+      path: '/alerts'
+      fullPath: '/alerts'
+      preLoaderRoute: typeof AlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +217,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  AlertsRoute: AlertsRoute,
+  BranchesRoute: BranchesRoute,
+  EmissionsRoute: EmissionsRoute,
+  EnergyRoute: EnergyRoute,
+  GreenRoomsRoute: GreenRoomsRoute,
+  PaperRoute: PaperRoute,
+  ReportsRoute: ReportsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
